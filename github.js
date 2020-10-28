@@ -13,7 +13,8 @@ fetch('https://api.github.com/users/tylerdance')
     console.log(tylerObj);
 
     const newElement = document.createElement('p');
-    newElement.textContent = tylerObj.name;
+    newElement.textContent = tylerObj.location;
+    console.log(newElement);
     container.appendChild(newElement);  
 })
 
