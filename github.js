@@ -1,11 +1,24 @@
+const container = document.querySelector('.container');
+
 fetch('https://api.github.com/users/tylerdance')
 .then(response => {
     return response.json();
 })
 .then(githubData => {
-    console.log(githubData);
+    const tylerObj = {
+        location: githubData.location,
+        username: githubData.login,
+        name: githubData.name
+    }
+    console.log(tylerObj);
+
+    const newElement = document.createElement('p');
+    newElement.textContent = tylerObj.name;
+    container.appendChild(newElement);  
 })
 
 // .catch(error => {
 //     console.log(error);
 // });
+
+
